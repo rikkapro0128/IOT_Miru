@@ -1,0 +1,270 @@
+@import "variable";
+@import "component";
+
+* {
+  font-family: "Roboto", sans-serif;
+  user-select: none;
+  -webkit-user-drag: none;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+div,
+p,
+input {
+  color: $font-color-mode-light;
+}
+
+html {
+  background-color: $bg-mode-light;
+}
+
+body {
+  padding: 10px;
+}
+
+i {
+  color: inherit !important;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.menu {
+  background-color: $bg-menu;
+  width: fit-content;
+  border-radius: 1rem;
+  padding: 0.6rem 0;
+  display: inline-flex;
+  flex-direction: column;
+  height: 94vh;
+  &--item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 1rem;
+    margin: 0.6rem 1.5rem;
+    cursor: pointer;
+    color: #fff;
+    &.general {
+      margin-bottom: 2rem;
+    }
+    &.logout {
+    }
+    span {
+      text-transform: capitalize;
+    }
+    i {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.container {
+  display: inline-block;
+  margin-left: 2.5rem;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    .search {
+      position: relative;
+      min-width: 30rem;
+      &--icon {
+        position: absolute;
+        width: 2.5rem;
+        height: 100%;
+        i {
+          position: relative;
+          left: 50%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      input {
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        box-sizing: border-box;
+        width: 100%;
+        outline: none;
+        border-radius: 0.7rem;
+        background-color: $input-color;
+        border: none;
+        padding: 1rem;
+        font-size: 0.9rem;
+        padding-left: 2.5rem;
+        &::placeholder {
+          text-transform: capitalize;
+        }
+      }
+    }
+    .toolbox {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      & > div {
+        padding: 0.7rem;
+        cursor: pointer;
+      }
+      &__user {
+        display: flex;
+        align-items: center;
+        &.user--select {
+          & > div {
+            margin: 0 0.3rem;
+          }
+          .user--select__avatar {
+            max-width: 30px;
+            max-height: 30px;
+            border-radius: 50%;
+            overflow: hidden;
+            img {
+              display: block;
+              width: 100%;
+            }
+          }
+          .user--select__name {
+            font-weight: bold;
+          }
+
+          .user--select__arrow {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+  .section {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    margin-top: 1.5rem;
+    &--left {
+      .welcome {
+        background-color: $bg-welcome;
+        padding: 1rem;
+        border-radius: 1rem;
+        cursor: pointer;
+        position: relative;
+        transition: all 200ms;
+        background-image: url("../../assets/welcome.png");
+        background-position: right;
+        background-repeat: no-repeat;
+        background-size: 35%;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        &:hover {
+          background-size: 38%;
+          transform: translate(2px, -2px);
+        }
+        h1 {
+          color: $font-color-welcome;
+          text-transform: capitalize;
+          margin: 0.8rem 0;
+        }
+        .decription {
+          display: block;
+          margin: 0.8rem 0;
+          text-transform: capitalize;
+          color: $font-color-welcome-100;
+          font-style: italic;
+        }
+        & > div {
+          margin: 0.4rem 0;
+          font-weight: bold;
+          color: $font-color-mode-light-100;
+          text-transform: capitalize;
+          i {
+            color: inherit;
+            width: 2rem;
+            text-align: center;
+          }
+        }
+      }
+      .home--control {
+        .header {
+          display: flex;
+          align-items: center;
+          h2 {
+            text-transform: capitalize;
+          }
+          &--right {
+            display: flex;
+            align-items: center;
+            color: $font-color-mode-light-100;
+            font-weight: bold;
+            & > div:not(:last-child) {
+              i {
+                width: 1.2rem;
+                color: $font-color-mode-light-100;
+                text-align: center;
+              }
+              span {
+                color: inherit;
+              }
+              margin: 0 0.8rem;
+            }
+            .select--box {
+              display: flex;
+              margin-left: 0.8rem;
+              padding: 0.6rem 0.6rem;
+              background-color: $bg-select-box;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              & > div {
+                margin: 0 0.5rem;
+                text-transform: capitalize;
+              }
+            }
+          }
+        }
+        .muti--device {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          grid-gap: 1rem;
+          .device {
+            padding: 1rem 1.4rem;
+            background-color: #fff;
+            border-radius: 1rem;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            transition: all 200ms;
+            &:hover {
+              box-shadow: $bg-shadow-device 0px 0px 20px;
+              background-color: $bg-device;
+              cursor: pointer;
+              .switch {
+                background-color: #fff;
+                &::before {
+                  background-color: $bg-switch;
+                }
+              }
+              div {
+                color: #fff;
+              }
+            }
+            & > div {
+              margin: 0.4rem 0;
+              transition: all 200ms;
+            }
+            .top {
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              .status {
+                margin-right: 1.5rem;
+                text-transform: uppercase;
+                font-weight: bold;
+              }
+            }
+            .middle {
+              margin: 0.8rem 0;
+              i {
+                color: $bg-switch;
+              }
+            }
+            .bottom {
+              text-transform: capitalize;
+            }
+          }
+        }
+      }
+    }
+  }
+}

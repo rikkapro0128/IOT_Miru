@@ -1,0 +1,31 @@
+.switch {
+  background-color: $bg-switch;
+  width: 34px;
+  height: 20px;
+  border-radius: 1rem;
+  padding: 0 2px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: background-color 200ms;
+  &::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    background-color: #fff;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
+    transition: all 200ms;
+  }
+  &.active {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    &::before {
+      background-color: $bg-switch;
+      transform: translate(calc(100% - 4px), -50%);
+    }
+  }
+}

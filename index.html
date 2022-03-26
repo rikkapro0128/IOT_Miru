@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IOT Miru</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style/css/main.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="menu">
+      <div class="menu--item general">
+        <!-- <span>tổng quan</span> -->
+        <i class="fa-solid fa-house-medical"></i>
+      </div>
+      <div class="menu--item control">
+        <!-- <span>điều khiển</span> -->
+        <i class="fa-solid fa-gamepad"></i>
+      </div>
+      <div class="menu--item statistical">
+        <!-- <span>thông kê</span> -->
+        <i class="fa-solid fa-chart-simple"></i>
+      </div>
+      <div class="menu--item ls--devices">
+        <!-- <span>danh sách thiết bị</span> -->
+        <i class="fa-solid fa-hard-drive"></i>
+      </div>
+      <div class="menu--item user">
+        <!-- <span>người dùng</span> -->
+        <i class="fa-solid fa-user"></i>
+      </div>
+      <div class="menu--item logout">
+        <!-- <span>đăng xuất</span> -->
+        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+      </div>
+    </div>
+    <div class="container">
+      <div class="header">
+        <div class="search">
+          <div class="search--icon">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+          <input placeholder="search" type="text" name="search" id="search">
+        </div>
+        <div class="toolbox">
+          <div class="toolbox__setting">
+            <!-- icon setting -->
+            <i class="fa-solid fa-gear"></i>
+          </div>
+          <div class="toolbox__notify">
+            <!-- icon notify -->
+            <i class="fa-solid fa-bell"></i>
+          </div>
+          <div class="toolbox__user user--select">
+            <div class="user--select__avatar">
+              <!-- icon avatar -->
+              <img src="https://pbs.twimg.com/profile_images/1451666062638923780/6v-q2Ojo_400x400.jpg" alt="avatar">
+            </div>
+            <div class="user--select__name">Miru</div>
+            <div class="user--select__arrow">
+              <!-- icon arrow -->
+              <i class="fa-solid fa-angle-down"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="section">
+        <div class="section--left">
+          <div class="welcome">
+            <h1>xin chào, miru!</h1>
+            <span class="decription">chào mừng quay trở lại, xin chúc bạn có một ngày vui vẻ và tràn đầy năng lượng nhé.
+              nhớ rằng, IOT App luôn mang lại trải nghiệm quản lí tuyệt vời cho cuộc sống của bạn
+              bạn
+              bạn</span>
+            <div class="temp--outside">
+              <i class="fa-solid fa-temperature-full"></i>
+              <span class="temp">+25°C</span>
+              <span>bên ngoài tổ ấm của bạn</span>
+            </div>
+            <div class="guess--wheather">
+              <i class="fa-solid fa-cloud"></i>
+              <span>dự báo hôm nay trời nắng</span>
+            </div>
+          </div>
+          <div class="home--control">
+            <div class="header">
+              <h2 class="header--left house--name">tổ ấm của miru</h2>
+              <div class="header--right">
+                <div class="temp">
+                  <i class="fa-solid fa-temperature-half"></i>
+                  <span>25°C</span>
+                </div>
+                <div class="humi">
+                  <i class="fa-solid fa-droplet"></i>
+                  <span>14%</span>
+                </div>
+                <div class="select--box view--room">
+                  <div class="select--box__choose">phòng ngủ</div>
+                  <div class="select--box__arrow">
+                    <i class="fa-solid fa-angle-down"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="muti--device">
+              <div class="device">
+                <div class="top">
+                  <span class="status">on</span>
+                  <div class="switch">
+                  </div>
+                </div>
+                <div class="middle">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="bottom">
+                  lights
+                </div>
+              </div>
+              <div class="device">
+                <div class="top">
+                  <span class="status">on</span>
+                  <div class="switch">
+                  </div>
+                </div>
+                <div class="middle">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="bottom">
+                  lights
+                </div>
+              </div>
+              <div class="device">
+                <div class="top">
+                  <span class="status">on</span>
+                  <div class="switch">
+                  </div>
+                </div>
+                <div class="middle">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="bottom">
+                  lights
+                </div>
+              </div>
+              <div class="device">
+                <div class="top">
+                  <span class="status">on</span>
+                  <div class="switch">
+                  </div>
+                </div>
+                <div class="middle">
+                  <i class="fa-solid fa-lightbulb"></i>
+                </div>
+                <div class="bottom">
+                  lights
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="section--right"></div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./app.js"></script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyAQUwQKKLhy90YlOtSoUKM2wtTpB5pG6FQ",
+    authDomain: "steam-strategy-345319.firebaseapp.com",
+    databaseURL: "https://steam-strategy-345319-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "steam-strategy-345319",
+    storageBucket: "steam-strategy-345319.appspot.com",
+    messagingSenderId: "657447147258",
+    appId: "1:657447147258:web:fd7f7979fc97d1851e9b43"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  console.log(app);
+</script>
+
+</html>
