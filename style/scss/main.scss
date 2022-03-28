@@ -1,5 +1,6 @@
 @import "variable";
 @import "component";
+@import "animation";
 
 * {
   font-family: "Roboto", sans-serif;
@@ -30,16 +31,19 @@ i {
 .wrap {
   display: grid;
   grid-template-columns: auto 1fr;
+  overflow: hidden;
 }
 
 .menu {
   background-color: $bg-menu;
-  width: fit-content;
   border-radius: 1rem;
   padding: 0.6rem 0;
   display: inline-flex;
   flex-direction: column;
   height: 94vh;
+  transform: translateX(-100%);
+  width: 0;
+  overflow: hidden;
   &--item {
     display: flex;
     justify-content: space-between;
@@ -70,6 +74,7 @@ i {
     .search {
       position: relative;
       min-width: 30rem;
+      animation: initDom 0.3s linear;
       &--icon {
         position: absolute;
         width: 2.5rem;
@@ -101,6 +106,7 @@ i {
       display: flex;
       justify-content: space-around;
       align-items: center;
+      animation: initDom 0.3s linear;
       & > div {
         padding: 0.7rem;
         cursor: pointer;
@@ -150,6 +156,7 @@ i {
         background-repeat: no-repeat;
         background-size: 35%;
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        animation: initDom 0.3s linear;
         &:hover {
           background-size: 38%;
           transform: translate(2px, -2px);
@@ -182,6 +189,7 @@ i {
         .header {
           display: flex;
           align-items: center;
+          animation: initDom 0.3s linear;
           h2 {
             text-transform: capitalize;
           }
@@ -220,6 +228,7 @@ i {
           grid-template-columns: repeat(4, 1fr);
           grid-gap: 1rem;
           .device {
+            animation: initDom 0.3s linear;
             padding: 1rem 1.4rem;
             background-color: #fff;
             border-radius: 1rem;

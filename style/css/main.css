@@ -39,6 +39,36 @@
           transform: translate(calc(100% - 4px), -50%);
 }
 
+@-webkit-keyframes initDom {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.92);
+            transform: scale(0.92);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
+@keyframes initDom {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale(0.92);
+            transform: scale(0.92);
+  }
+  60% {
+    opacity: 1;
+  }
+  to {
+    -webkit-transform: none;
+            transform: none;
+  }
+}
+
 * {
   font-family: "Roboto", sans-serif;
   -webkit-user-select: none;
@@ -74,13 +104,11 @@ i {
   display: grid;
   -ms-grid-columns: auto 1fr;
       grid-template-columns: auto 1fr;
+  overflow: hidden;
 }
 
 .menu {
   background-color: #7247ee;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
   border-radius: 1rem;
   padding: 0.6rem 0;
   display: -webkit-inline-box;
@@ -91,6 +119,10 @@ i {
       -ms-flex-direction: column;
           flex-direction: column;
   height: 94vh;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  width: 0;
+  overflow: hidden;
 }
 
 .menu--item {
@@ -135,6 +167,8 @@ i {
 .container .header .search {
   position: relative;
   min-width: 30rem;
+  -webkit-animation: initDom 0.3s linear;
+          animation: initDom 0.3s linear;
 }
 
 .container .header .search--icon {
@@ -191,6 +225,8 @@ i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-animation: initDom 0.3s linear;
+          animation: initDom 0.3s linear;
 }
 
 .container .header .toolbox > div {
@@ -253,6 +289,8 @@ i {
   background-size: 35%;
   -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  -webkit-animation: initDom 0.3s linear;
+          animation: initDom 0.3s linear;
 }
 
 .container .section--left .welcome:hover {
@@ -295,6 +333,8 @@ i {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-animation: initDom 0.3s linear;
+          animation: initDom 0.3s linear;
 }
 
 .container .section--left .home--control .header h2 {
@@ -351,6 +391,8 @@ i {
 }
 
 .container .section--left .home--control .muti--device .device {
+  -webkit-animation: initDom 0.3s linear;
+          animation: initDom 0.3s linear;
   padding: 1rem 1.4rem;
   background-color: #fff;
   border-radius: 1rem;

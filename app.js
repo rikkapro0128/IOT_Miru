@@ -23,38 +23,28 @@ const firebaseConfig = {
   messagingSenderId: "657447147258",
   appId: "1:657447147258:web:fd7f7979fc97d1851e9b43",
 };
-
-// swicth hanlde UI
-const switchs = document.querySelectorAll(".switch");
-
-for (let i = 0; i < switchs.length; i++) {
-  switchs[i].addEventListener("click", switchClick);
-}
-
-function switchClick(e) {
-  const ctx = e.target;
-  if (ctx.classList.contains("active")) {
-    ctx.classList.remove("active");
-  } else {
-    ctx.classList.add("active");
-  }
-}
+const user = {
+  email: 'stkssc002@gmail.com',
+  password: 'npmstart007',
+};
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
-const starCountRef = ref(db, "/");
-onValue(starCountRef, (snapshot) => {
-  const data = snapshot.val();
-  console.log(data);
-});
 
+// fetch data when data change
+// const starCountRef = ref(db, "/");
+// onValue(starCountRef, (snapshot) => {
+//   const data = snapshot.val();
+// });
+
+// authentication user with email and password
 const auth = getAuth();
-signInWithEmailAndPassword(auth, 'stkssc002@gmail.com', 'npmstart007')
+signInWithEmailAndPassword(auth, user.email, user.password)
   .then((userCredential) => {
     // Signed in
-    const user = userCredential.user;
-    console.log(user);
+    // const user = userCredential.user;
+    console.log('you was signed!');
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -62,8 +52,85 @@ signInWithEmailAndPassword(auth, 'stkssc002@gmail.com', 'npmstart007')
     console.log(errorCode, errorMessage);
   });
 
-document
-  .querySelector(".user--select__avatar")
-  .addEventListener("click", function () {
-    set(ref(db, "led/"), true);
+// swicth hanlde UI
+
+function switchClick(e) {
+  const ctx = e.target;
+  const getField = ctx.getAttribute('field-data');
+  if (ctx.classList.contains("active")) {
+    sendDataByField(getField, true);
+    ctx.classList.remove("active");
+    ctx.previousElementSibling.innerHTML = 'mở';
+  } else {
+    sendDataByField(getField, false);
+    ctx.classList.add("active");
+    ctx.previousElementSibling.innerHTML = 'tắt';
+  }
+}
+
+const switchs = document.querySelectorAll(".switch");
+
+// init status leds
+readDataBypath('devices/leds')
+  .then((initStateLed) => {
+    for(const [key, value] of Object.entries(initStateLed)) {
+      const ctx = document.querySelector(`[field-data=${key}]`);
+      ctx.previousElementSibling.innerHTML = value ? 'mở' : 'tắt';
+      value || ctx.classList.add('active');
+    }
+  })
+
+for (let i = 0; i < switchs.length; i++) {
+  switchs[i].addEventListener("click", switchClick);
+}
+
+// toggle menu
+const btnToggleMenu = document.querySelector('.welcome');
+const menu = document.querySelector('.menu');
+
+btnToggleMenu.addEventListener('click', function() {
+  const ctx = menu;
+  if (!ctx.classList.contains("active")) {
+    anime({
+      targets: menu,
+      width: '100%',
+      translateX: 0,
+      easing: 'easeInOutExpo',
+      duration: 500,
+    });
+    ctx.classList.add("active");
+  } else {
+    anime({
+      targets: menu,
+      translateX: '-100%',
+      easing: 'easeOutExpo',
+      duration: 500,
+      complete: function() {
+        anime({
+          targets: menu,
+          width: '0px',
+          easing: 'easeOutExpo',
+          duration: 200,
+        });
+      }
+    });
+    ctx.classList.remove("active");
+  }
+})
+
+function sendDataByField(field, data) {
+  set(ref(db, 'devices/leds/' + field + "/"), data);
+}
+
+function readDataBypath(path) {
+  const dbRef = ref(getDatabase());
+  return get(child(dbRef, path + `/`)).then((snapshot) => {
+    if (snapshot.exists()) {
+      return snapshot.val();
+    } else {
+      return null;
+    }
+  }).catch((error) => {
+    console.error(error);
   });
+}
