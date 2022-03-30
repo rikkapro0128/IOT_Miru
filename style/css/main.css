@@ -1,5 +1,16 @@
+.bg-blue {
+  background-color: #3acbe9;
+}
+
+.bg-yellow {
+  background-color: #f4c427;
+}
+
+.bg-orange {
+  background-color: #ff9060;
+}
+
 .switch {
-  background-color: #7247ee;
   width: 34px;
   height: 20px;
   border-radius: 1rem;
@@ -9,6 +20,24 @@
   cursor: pointer;
   -webkit-transition: background-color 200ms;
   transition: background-color 200ms;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.switch.blue::before {
+  background-color: #3acbe9;
+}
+
+.switch.violet::before {
+  background-color: #7247ee;
+}
+
+.switch.yellow::before {
+  background-color: #f4c427;
+}
+
+.switch.orange::before {
+  background-color: #ff9060;
 }
 
 .switch::before {
@@ -19,7 +48,6 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   border-radius: 1rem;
-  background-color: #fff;
   position: relative;
   top: 50%;
   -webkit-transform: translate(0, -50%);
@@ -29,12 +57,11 @@
 }
 
 .switch.active {
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background-color: #ccc;
 }
 
 .switch.active::before {
-  background-color: #7247ee;
+  background-color: #fff;
   -webkit-transform: translate(calc(100% - 4px), -50%);
           transform: translate(calc(100% - 4px), -50%);
 }
@@ -123,6 +150,67 @@ i {
           transform: translateX(-100%);
   width: 0;
   overflow: hidden;
+  position: relative;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.menu--run {
+  position: absolute;
+  right: 0;
+  width: 80%;
+  height: 50px;
+  background-color: #fff;
+  margin: 0.6rem 0;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 17px;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+}
+
+.menu--run__top {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  top: 0;
+  right: 0;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  overflow: hidden;
+}
+
+.menu--run__top:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 2rem 0;
+  background-color: #7247ee;
+}
+
+.menu--run__bottom {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  bottom: 0;
+  right: 0;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+  overflow: hidden;
+}
+
+.menu--run__bottom:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 2rem 0 0;
+  background-color: #7247ee;
 }
 
 .menu--item {
@@ -136,10 +224,13 @@ i {
   margin: 0.6rem 1.5rem;
   cursor: pointer;
   color: #fff;
+  z-index: 1;
 }
 
 .menu--item.general {
   margin-bottom: 2rem;
+  margin-top: 0.9rem;
+  color: #2e2e2e;
 }
 
 .menu--item span {
@@ -409,14 +500,6 @@ i {
   cursor: pointer;
 }
 
-.container .section--left .home--control .muti--device .device:hover .switch {
-  background-color: #fff;
-}
-
-.container .section--left .home--control .muti--device .device:hover .switch::before {
-  background-color: #7247ee;
-}
-
 .container .section--left .home--control .muti--device .device:hover div {
   color: #fff;
 }
@@ -454,6 +537,43 @@ i {
 }
 
 .container .section--left .home--control .muti--device .device .bottom {
+  text-transform: capitalize;
+}
+
+.container .section--right {
+  padding: 1rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin: 0 0.5rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
+}
+
+.container .section--right .my--devices__title {
+  text-transform: capitalize;
+}
+
+.container .section--right .my--devices .device {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+.container .section--right .my--devices .device > * {
+  color: #fff;
+  display: inline-block;
+}
+
+.container .section--right .my--devices .device__name {
   text-transform: capitalize;
 }
 /*# sourceMappingURL=main.css.map */

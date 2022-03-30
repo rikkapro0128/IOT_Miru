@@ -1,4 +1,5 @@
 @import "variable";
+@import "globals";
 @import "component";
 @import "animation";
 
@@ -44,6 +45,58 @@ i {
   transform: translateX(-100%);
   width: 0;
   overflow: hidden;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  &--run {
+    position: absolute;
+    right: 0;
+    width: 80%;
+    height: 50px;
+    background-color: #fff;
+    margin: 0.6rem 0;
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+    box-sizing: border-box;
+    margin-top: 17px;
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    &__top {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      top: 0;
+      right: 0;
+      transform: translateY(-100%);
+      overflow: hidden;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 0 0 2rem 0;
+        background-color: $bg-menu;
+      }
+    }
+    &__bottom {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
+      bottom: 0;
+      right: 0;
+      transform: translateY(100%);
+      overflow: hidden;
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 0 2rem 0 0;
+        background-color: $bg-menu;
+      }
+    }
+  }
   &--item {
     display: flex;
     justify-content: space-between;
@@ -51,8 +104,11 @@ i {
     margin: 0.6rem 1.5rem;
     cursor: pointer;
     color: #fff;
+    z-index: 1;
     &.general {
       margin-bottom: 2rem;
+      margin-top: 0.9rem;
+      color: $font-color-mode-light-100;
     }
     &.logout {
     }
@@ -236,14 +292,8 @@ i {
             transition: all 200ms;
             &:hover {
               box-shadow: $bg-shadow-device 0px 0px 20px;
-              background-color: $bg-device;
+              background-color: $bg-device-primary;
               cursor: pointer;
-              .switch {
-                background-color: #fff;
-                &::before {
-                  background-color: $bg-switch;
-                }
-              }
               div {
                 color: #fff;
               }
@@ -272,6 +322,33 @@ i {
               text-transform: capitalize;
             }
           }
+        }
+      }
+    }
+    &--right {
+      padding: 1rem;
+      box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      margin: 0 0.5rem;
+      margin-left: 1rem;
+      border-radius: 1rem;
+      .my--devices {
+        &__title {
+          text-transform: capitalize;
+        }
+        .device {
+          & > * {
+            color: #fff;
+            display: inline-block;
+          }
+          &__name {
+            text-transform: capitalize;
+          }
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          margin-top: 0.5rem;
+          padding: 1rem;
+          border-radius: 1rem;
         }
       }
     }

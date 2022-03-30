@@ -1,5 +1,4 @@
 .switch {
-  background-color: $bg-switch;
   width: 34px;
   height: 20px;
   border-radius: 1rem;
@@ -7,6 +6,29 @@
   box-sizing: border-box;
   cursor: pointer;
   transition: background-color 200ms;
+  background-color: #fff;
+  // box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.6);
+  border: 1px solid #ccc;
+  &.blue {
+    &::before {
+      background-color: $bg-device-blue;
+    }
+  }
+  &.violet {
+    &::before {
+      background-color: $bg-device-violet;
+    }
+  }
+  &.yellow {
+    &::before {
+      background-color: $bg-device-yellow;
+    }
+  }
+  &.orange {
+    &::before {
+      background-color: $bg-device-orange;
+    }
+  }
   &::before {
     content: "";
     display: block;
@@ -14,17 +36,15 @@
     height: 16px;
     box-sizing: border-box;
     border-radius: 1rem;
-    background-color: #fff;
     position: relative;
     top: 50%;
     transform: translate(0, -50%);
     transition: all 200ms;
   }
   &.active {
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: #ccc;
     &::before {
-      background-color: $bg-switch;
+      background-color: #fff;
       transform: translate(calc(100% - 4px), -50%);
     }
   }

@@ -10,6 +10,16 @@ $bg-welcome: #fff;
 $font-color-welcome: #d27843;
 $font-color-welcome-100: #e7b389;
 $bg-select-box: #edeef4;
-$bg-device: #7247ee;
+$bg-device-primary: #7247ee;
+// for background
+$bg-blue: #3acbe9;
+$bg-yellow: #f4c427;
+$bg-orange: #ff9060;
+// for switch
+$bg-device-blue: $bg-blue;
+$bg-device-yellow: $bg-yellow;
+$bg-device-orange: $bg-orange;
+$bg-device-violet: #7247ee;
+// none
 $bg-shadow-device: rgba(113, 71, 238, 0.671);
 $bg-switch: #7247ee;

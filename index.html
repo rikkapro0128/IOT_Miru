@@ -15,6 +15,10 @@
 <body>
   <div class="wrap">
     <div class="menu">
+      <div class="menu--run">
+        <div class="menu--run__top"></div>
+        <div class="menu--run__bottom"></div>
+      </div>
       <div class="menu--item general">
         <!-- <span>tổng quan</span> -->
         <i class="fa-solid fa-house-medical"></i>
@@ -112,7 +116,7 @@
               <div class="device">
                 <div class="top">
                   <span class="status">loading...</span>
-                  <div class="switch" field-data="led_1">
+                  <div class="switch violet" field-data="led_1">
                   </div>
                 </div>
                 <div class="middle">
@@ -125,7 +129,7 @@
               <div class="device">
                 <div class="top">
                   <span class="status">loading...</span>
-                  <div class="switch" field-data="led_2">
+                  <div class="switch violet" field-data="led_2">
                   </div>
                 </div>
                 <div class="middle">
@@ -138,7 +142,7 @@
               <div class="device">
                 <div class="top">
                   <span class="status">loading...</span>
-                  <div class="switch" field-data="led_3">
+                  <div class="switch violet" field-data="led_3">
                   </div>
                 </div>
                 <div class="middle">
@@ -151,7 +155,7 @@
               <div class="device">
                 <div class="top">
                   <span class="status">loading...</span>
-                  <div class="switch" field-data="led_4">
+                  <div class="switch violet" field-data="led_4">
                   </div>
                 </div>
                 <div class="middle">
@@ -164,10 +168,46 @@
             </div>
           </div>
         </div>
-        <div class="section--right"></div>
+        <div class="section--right">
+          <div class="my--devices">
+            <h3 class="my--devices__title">thiết bị của tôi</h3>
+            <div class="lamps device bg-blue">
+              <div class="device__icon">
+                <i class="fa-solid fa-laptop"></i>
+              </div>
+              <div class="device__name">
+                đèn ngủ
+              </div>
+              <div class="device__switch">
+                <div class="switch blue" field-data="lamps"></div>
+              </div>
+            </div>
+            <div class="tivi device bg-yellow">
+              <div class="device__icon">
+                <i class="fa-solid fa-laptop"></i>
+              </div>
+              <div class="device__name">
+                tivi
+              </div>
+              <div class="device__switch">
+                <div class="switch yellow" field-data="tivi"></div>
+              </div>
+            </div>
+            <div class="tivi device bg-orange">
+              <div class="device__icon">
+                <i class="fa-solid fa-laptop"></i>
+              </div>
+              <div class="device__name">
+                loa
+              </div>
+              <div class="device__switch">
+                <div class="switch orange" field-data="speaker"></div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"
   integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q=="

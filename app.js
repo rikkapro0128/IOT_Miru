@@ -60,11 +60,18 @@ function switchClick(e) {
   if (ctx.classList.contains("active")) {
     sendDataByField(getField, true);
     ctx.classList.remove("active");
-    ctx.previousElementSibling.innerHTML = 'mở';
+    if(ctx.previousElementSibling) {
+      ctx.previousElementSibling.innerHTML = 'mở';
+    }
   } else {
+    if(ctx.previousElementSibling) {
+
+    }
     sendDataByField(getField, false);
     ctx.classList.add("active");
-    ctx.previousElementSibling.innerHTML = 'tắt';
+    if(ctx.previousElementSibling) {
+      ctx.previousElementSibling.innerHTML = 'tắt';
+    }
   }
 }
 
@@ -75,7 +82,9 @@ readDataBypath('devices/leds')
   .then((initStateLed) => {
     for(const [key, value] of Object.entries(initStateLed)) {
       const ctx = document.querySelector(`[field-data=${key}]`);
-      ctx.previousElementSibling.innerHTML = value ? 'mở' : 'tắt';
+      if(ctx.previousElementSibling) {
+        ctx.previousElementSibling.innerHTML = value ? 'mở' : 'tắt';
+      }
       value || ctx.classList.add('active');
     }
   })
