@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IOT Miru</title>
+  <title>IOT - Miru</title>
+  <link rel="shortcut icon" href="./assets/anime.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -116,7 +117,7 @@
               <div class="device">
                 <div class="top">
                   <span class="status">loading...</span>
-                  <div class="switch violet" field-data="led_1">
+                  <div class="switch violet" device-type="leds" logic="digital" field-data="led_1">
                   </div>
                 </div>
                 <div class="middle">
@@ -129,7 +130,7 @@
               <div class="device">
                 <div class="top">
                   <span class="status">loading...</span>
-                  <div class="switch violet" field-data="led_2">
+                  <div class="switch violet" device-type="leds" logic="digital" field-data="led_2">
                   </div>
                 </div>
                 <div class="middle">
@@ -142,7 +143,7 @@
               <div class="device">
                 <div class="top">
                   <span class="status">loading...</span>
-                  <div class="switch violet" field-data="led_3">
+                  <div class="switch violet" device-type="leds" logic="digital" field-data="led_3">
                   </div>
                 </div>
                 <div class="middle">
@@ -155,7 +156,7 @@
               <div class="device">
                 <div class="top">
                   <span class="status">loading...</span>
-                  <div class="switch violet" field-data="led_4">
+                  <div class="switch violet" device-type="leds" logic="digital" field-data="led_4">
                   </div>
                 </div>
                 <div class="middle">
@@ -179,7 +180,7 @@
                 đèn ngủ
               </div>
               <div class="device__switch">
-                <div class="switch blue" field-data="lamps"></div>
+                <div class="switch blue" device-type="common" field-data="lamps" logic="digital"></div>
               </div>
             </div>
             <div class="tivi device bg-yellow">
@@ -190,7 +191,7 @@
                 tivi
               </div>
               <div class="device__switch">
-                <div class="switch yellow" field-data="tivi"></div>
+                <div class="switch yellow" device-type="common" field-data="tivi" logic="digital"></div>
               </div>
             </div>
             <div class="tivi device bg-orange">
@@ -201,7 +202,7 @@
                 loa
               </div>
               <div class="device__switch">
-                <div class="switch orange" field-data="speaker"></div>
+                <div class="switch orange" device-type="common" field-data="speaker" logic="digital"></div>
               </div>
             </div>
           </div>
